@@ -14,8 +14,6 @@ permissions:
 jobs:
   npm:
     runs-on: ubuntu-latest
-    env:
-      NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -26,6 +24,19 @@ jobs:
         run: node scripts/check.mjs
       # A release tag is safe to push before the npm token exists: without the
       # secret the publish step is skipped instead of failing the run.
+      - name: Detect npm token
+        id: token
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          if [ -n "$NPM_TOKEN" ]; then
+            echo "present=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "present=false" >> "$GITHUB_OUTPUT"
+            echo "NPM_TOKEN is not configured; skipping the publish step." >> "$GITHUB_STEP_SUMMARY"
+          fi
       - name: Publish to npm
-        if: env.NODE_AUTH_TOKEN != ''
+        if: steps.token.outputs.present == 'true'
         run: npm publish --access public --provenance
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
