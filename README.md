@@ -68,12 +68,12 @@ device/browser profile and applies to the next banner without a Host round trip.
 ## Install
 
 ```sh
-# from npm (install into whichever profile serves your Web UI: web or desktop)
-dsh plugin --profile web add dsh-native-notifications
-dsh plugin --profile desktop add dsh-native-notifications
-
-# from GitHub
+# from GitHub (available now)
+dsh plugin --profile web add github:tommy00748-tech/dsh-native-notifications
 dsh plugin --profile desktop add github:tommy00748-tech/dsh-native-notifications
+
+# from npm (once the npm release is published)
+dsh plugin --profile web add dsh-native-notifications
 
 # from a local checkout
 dsh plugin --profile desktop add link:/absolute/path/to/dsh-native-notifications
