@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Desktop Notifications",
+    "description": "Native desktop notifications from DeepSeek Harness itself: approval requests, questions, finished tasks, errors and sign-in prompts. Each banner is attributed to the DSH app, and clicking it focuses DSH and opens the conversation."
+  }
+}

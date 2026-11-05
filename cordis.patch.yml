@@ -1,0 +1,52 @@
+# dsh-native-notifications bundle patch.
+#
+# One row mounts a Host half (event detection + two same-origin routes) and a
+# Client half (renders native banners and owns the click action). Banners are
+# attributed to the DeepSeek Harness app; clicking one focuses DSH and opens the
+# conversation that finished.
+#
+# Every field below is optional; the defaults are shown so they are discoverable.
+# To change one, add a patch entry with the same id and restate ALL fields you
+# want to keep (a patch replaces the complete config, it is never deep-merged):
+#
+#   - id: desktop-notifications
+#     config:
+#       onlyWhenUnfocused: true
+#       idleGraceMs: 2000
+#
+# Keys and defaults:
+#   enabled             true     master switch
+#   delivery            'client' 'client' (page shows native banners), 'osascript'
+#                                (legacy helper-process banners), or 'both'
+#   sound               true     play the notification sound
+#   silent              false    ask the page for silent banners
+#   onlyWhenUnfocused   false    skip banners while the DSH window is focused
+#   soundName           'Glass'  macOS sound name for the osascript lane
+#   subtitle            'DeepSeek Harness'
+#   osascriptPath       ''       '' means /usr/bin/osascript
+#   notifyApproval      true     while an approval request still waits for you
+#   notifyQuestion      true     while a user question waits for a choice
+#   notifyComplete      true     when a turn finishes and the session goes idle
+#   notifyError         true     when a step or turn errors
+#   notifyAccount       true     when a DeepSeek sign-in is required/expired
+#   notifySubagent      false    when a delegated child agent settles
+#   notifyWorkflow      false    when a workflow run settles
+#   notifyOnMount       false    ring once whenever the plugin loads (install check)
+#   onlyRootSessions    true     completion banners only for root sessions
+#   useSessionTitle     true     banner title = the conversation title
+#   stripMarkdown       true     strip markdown markers from title/body
+#   titleMaxChars       60
+#   titleCacheTtlMs     30000
+#   approvalDelayMs     1500     wait before announcing; auto-settled approvals never ring
+#   questionDelayMs     500
+#   idleGraceMs         4000     idle must hold this long to count as "done"
+#   errorSuppressMs     8000     do not announce completion this soon after an error
+#   dedupeWindowMs      1500
+#   bodyMaxChars        180
+#   logEnabled          true     append one audit line per banner
+#   logPath             ''       '' means <DSH home>/dsh-native-notifications.log
+#   logMaxBytes         262144
+- insert:
+    - id: desktop-notifications
+      name: 'dsh-native-notifications'
+      config: {}

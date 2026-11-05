@@ -1,0 +1,11 @@
+# Dependencies and build output are never published.
+node_modules/
+pnpm-lock.yaml
+package-lock.json
+yarn.lock
+
+# Local noise.
+.DS_Store
+*.log
+*.tgz
+coverage/

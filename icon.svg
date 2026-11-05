@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="DeepSeek Harness desktop notifications">
+  <defs>
+    <linearGradient id="dsh-native-notify-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4d6bfe"/>
+      <stop offset="1" stop-color="#2a3fb8"/>
+    </linearGradient>
+  </defs>
+  <rect x="2" y="2" width="60" height="60" rx="15" fill="url(#dsh-native-notify-bg)"/>
+  <path d="M32 12.5c-1.8 0-3.2 1.4-3.2 3.2v1.5c-5.4 1.5-9.1 6.4-9.1 12.2v8.5l-3.3 4.8c-.8 1.1.1 2.6 1.5 2.6h28.2c1.4 0 2.3-1.5 1.5-2.6l-3.3-4.8v-8.5c0-5.8-3.7-10.7-9.1-12.2v-1.5c0-1.8-1.4-3.2-3.2-3.2z" fill="#ffffff" fill-opacity="0.97"/>
+  <path d="M26.4 48.2a5.6 5.6 0 0 0 11.2 0z" fill="#ffffff" fill-opacity="0.97"/>
+  <circle cx="47.5" cy="17.5" r="8" fill="#ff5d5d"/>
+  <circle cx="47.5" cy="17.5" r="3.2" fill="#ffffff"/>
+</svg>

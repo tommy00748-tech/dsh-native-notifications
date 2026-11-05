@@ -1,0 +1,64 @@
+{
+  "format": 1,
+  "title": {
+    "en": "dsh-native-notifications",
+    "zh": "dsh-native-notifications"
+  },
+  "description": {
+    "en": "Native desktop notifications for DeepSeek Harness, with a selectable and customisable synthesised chime.",
+    "zh": "DeepSeek Harness 原生桌面通知，自带可选择、可自定义的合成提示音。"
+  },
+  "metadata": {
+    "categories": {
+      "ui": {
+        "title": {
+          "en": "Interface",
+          "zh": "界面"
+        }
+      }
+    },
+    "labels": {
+      "notifications": {
+        "title": {
+          "en": "Notifications",
+          "zh": "通知"
+        }
+      }
+    }
+  },
+  "plugins": [
+    {
+      "name": "dsh-native-notifications",
+      "title": {
+        "en": "Native Desktop Notifications",
+        "zh": "桌面通知"
+      },
+      "description": {
+        "en": "Native desktop notifications from DeepSeek Harness itself: approval requests, questions, finished tasks, errors and sign-in prompts. Banners are attributed to the DSH app, a click focuses DSH and opens the conversation, and the chime can be chosen from presets or authored as a note sequence.",
+        "zh": "由 DSH 自己弹出的原生桌面通知：需要确认权限、等待作答、任务完成、执行出错、需要登录时提醒你。通知归属于 DeepSeek Harness 应用，点击回到 DSH 并打开对应会话；提示音可选预设或自定义音高序列。"
+      },
+      "author": "tommy00748-tech",
+      "homepage": "https://github.com/tommy00748-tech/dsh-native-notifications#readme",
+      "repository": {
+        "url": "https://github.com/tommy00748-tech/dsh-native-notifications"
+      },
+      "category": "ui",
+      "labels": [
+        "notifications"
+      ],
+      "icon": "https://raw.githubusercontent.com/tommy00748-tech/dsh-native-notifications/main/icon.svg",
+      "versions": [
+        {
+          "version": "1.0.0",
+          "publishTimestamp": 1793872492,
+          "engines": {
+            "dsh": ">=0.1.0"
+          },
+          "source": {
+            "type": "npm"
+          }
+        }
+      ]
+    }
+  ]
+}

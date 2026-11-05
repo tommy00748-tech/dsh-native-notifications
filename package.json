@@ -1,0 +1,70 @@
+{
+  "name": "dsh-native-notifications",
+  "version": "1.0.0",
+  "description": "Native desktop notifications for DeepSeek Harness: approval requests, questions, finished tasks, errors and sign-in prompts — attributed to the DSH app, click to open the conversation, with a selectable and fully customisable synthesised chime.",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "deepseek",
+    "notification",
+    "notifications",
+    "desktop-notifications",
+    "macos",
+    "electron",
+    "chime",
+    "notify",
+    "通知",
+    "桌面通知",
+    "插件"
+  ],
+  "license": "MIT",
+  "author": "tommy00748-tech",
+  "scripts": {
+    "check": "node scripts/check.mjs",
+    "notify:test": "node scripts/notify-test.mjs"
+  },
+  "type": "module",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tommy00748-tech/dsh-native-notifications.git"
+  },
+  "homepage": "https://github.com/tommy00748-tech/dsh-native-notifications#readme",
+  "bugs": {
+    "url": "https://github.com/tommy00748-tech/dsh-native-notifications/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true
+    },
+    "engines": {
+      "dsh": ">=0.1.0"
+    }
+  }
+}
