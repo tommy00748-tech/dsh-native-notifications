@@ -50,12 +50,14 @@
       "versions": [
         {
           "version": "1.0.0",
-          "publishTimestamp": 1793872492,
+          "publishTimestamp": 1793873364,
           "engines": {
             "dsh": ">=0.1.0"
           },
           "source": {
-            "type": "npm"
+            "type": "git",
+            "url": "https://github.com/tommy00748-tech/dsh-native-notifications",
+            "commit": "f7cfe4337babf3f85a3a5d42ddd7608cfea900da"
           }
         }
       ]
