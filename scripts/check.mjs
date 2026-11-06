@@ -24,7 +24,8 @@ check(typeof pkg.version === 'string' && /^\d+\.\d+\.\d+$/u.test(pkg.version), '
 check(pkg.license === 'MIT', 'package.json: license must be MIT')
 check(pkg.dsh?.bundle?.patch === './cordis.patch.yml', 'package.json: dsh.bundle.patch must point at cordis.patch.yml')
 check(pkg.dsh?.client?.platform === 'web', 'package.json: dsh.client.platform must be "web"')
-check(pkg.dsh?.engines?.dsh !== undefined, 'package.json: dsh.engines.dsh is required for market compatibility')
+check(typeof pkg.engines?.dsh === 'string' && pkg.engines.dsh.length > 0, 'package.json: top-level engines.dsh is required for runtime compatibility (0.2.2 ignores dsh.engines)')
+check(pkg.dsh?.engines === undefined, 'package.json: move engines.dsh to the top-level engines field; dsh.engines is ignored')
 check(pkg.private !== true, 'package.json: private must not be true for an npm release')
 for (const key of ['repository', 'homepage', 'bugs']) {
   check(pkg[key] !== undefined, `package.json: ${key} is required for publishing`)

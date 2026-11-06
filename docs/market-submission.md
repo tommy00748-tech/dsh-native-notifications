@@ -83,10 +83,10 @@ document uses them):
   "icon": "https://raw.githubusercontent.com/tommy00748-tech/dsh-native-notifications/main/icon.svg",
   "versions": [
     {
-      "version": "1.0.0",
+      "version": "1.1.0",
       "publishTimestamp": 1793872492,
       "engines": {
-        "dsh": ">=0.1.0"
+        "dsh": ">=0.2.1-rc.5 <0.3.0"
       },
       "source": {
         "type": "npm"

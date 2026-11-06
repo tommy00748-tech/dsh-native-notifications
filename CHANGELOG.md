@@ -1,5 +1,19 @@
 # Changelog
 
+## 1.1.0
+
+Adapted to DeepSeek Harness 0.2.2-rc.1 (still compatible with 0.2.1-rc.5).
+
+- Declare compatibility in the **top-level** `engines` field: dsh 0.2.2 evaluates
+  `engines.dsh` there, so the previous `dsh.engines.dsh` declaration was ignored
+  by the installation compatibility gate.
+- `subagent/end` now also receives the delegating parent Agent from 0.2.2 and
+  leads the optional subagent banner with the parent conversation title.
+- Verified against dsh 0.2.2-rc.1: Host half mounts, both authenticated routes
+  register, the Client half boots, and the
+  **Settings → General → Notification sound** row renders and previews.
+- Compatibility range: `engines.dsh >=0.2.1-rc.5 <0.3.0`.
+
 ## 1.0.0
 
 First public release.

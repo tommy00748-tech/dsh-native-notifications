@@ -1,6 +1,6 @@
 {
   "name": "dsh-native-notifications",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Native desktop notifications for DeepSeek Harness: approval requests, questions, finished tasks, errors and sign-in prompts — attributed to the DSH app, click to open the conversation, with a selectable and fully customisable synthesised chime.",
   "keywords": [
     "dsh",
@@ -42,7 +42,8 @@
     "LICENSE"
   ],
   "engines": {
-    "node": ">=20"
+    "node": ">=20",
+    "dsh": ">=0.2.1-rc.5 <0.3.0"
   },
   "repository": {
     "type": "git",
@@ -62,9 +63,6 @@
     "client": {
       "platform": "web",
       "immediately": true
-    },
-    "engines": {
-      "dsh": ">=0.1.0"
     }
   }
 }

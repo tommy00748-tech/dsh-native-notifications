@@ -26,6 +26,9 @@
  * Web notifications (for example a plain browser without permission); it is off
  * by default because macOS attributes those banners to Script Editor.
  *
+ * Compatible with dsh 0.2.1-rc.5 through the 0.2.2 line; the row declares the
+ * top-level `engines.dsh` range the runtime evaluates (0.2.2 ignores `dsh.engines`).
+ *
  * @module dsh-native-notifications
  */
 
@@ -825,11 +828,12 @@ export function apply(ctx, config) {
     fireFor('account', lastActiveSessionId, '登录已过期 · 请重新登录 DeepSeek 账号。')
   })
 
-  ctx.on('subagent/end', (info) => {
+  ctx.on('subagent/end', (info, parent) => {
     const cfg = resolveConfig(config)
     if (!cfg.enabled || !cfg.notifySubagent) return
-    // SubagentRunEndInfo carries the child Session id; it has no parent id.
-    const id = rememberSession(info?.id)
+    // dsh >= 0.2.2 also dispatches the delegating parent Agent, so the banner can
+    // lead with the parent conversation; older runtimes pass only the child info.
+    const id = rememberSession(parent?.id, info?.id)
     const label = typeof info?.provider === 'string' && info.provider !== '' ? info.provider : '子任务'
     const reason = typeof info?.stopReason === 'string' && info.stopReason !== '' ? `（${info.stopReason}）` : ''
     fireFor('subagent', id, `子任务 ${label} 已结束${reason}。`)

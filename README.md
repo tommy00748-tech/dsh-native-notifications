@@ -161,9 +161,16 @@ contributes one bundle row and one Settings row.
 
 ## Compatibility
 
-- DSH `>= 0.1.0` (bundle patch + `dsh.client` web half).
-- macOS, Windows and Linux, as long as the DSH page can show platform notifications.
+- **Tested on dsh 0.2.1-rc.5 and 0.2.2-rc.1.** The runtime compatibility gate reads the
+  **top-level** `engines.dsh` field (`>=0.2.1-rc.5 <0.3.0`); dsh 0.2.2 ignores a
+  `dsh.engines` declaration, which is why 1.1.0 moved it.
+- Bundle patch + `dsh.client` web half; macOS, Windows and Linux, as long as the DSH page can
+  show platform notifications.
 - Node 20+ is only needed for repository tooling; the Host supplies the runtime.
+
+Verified against 0.2.2-rc.1 in a clean profile: the Host half mounts, both authenticated
+routes register, the Client half boots, the settings row renders, and the optional
+subagent banner uses the parent conversation title from the new `subagent/end` payload.
 
 ## 中文简介
 
