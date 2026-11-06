@@ -53,6 +53,8 @@ Open **Settings → General → Notification sound**:
 | Custom | your own note sequence, played with the playful timbre |
 | Muted | no chime |
 
+![Notification sound row in Settings → General](docs/screenshot-settings-0.2.2.png)
+
 The row has a **Preview** button and, for custom, a text field that accepts up to eight space/comma
 separated notes — note names (`C6 E6 G#6`, `Bb5`) or raw frequencies (`1046.5 1318.5`):
 
