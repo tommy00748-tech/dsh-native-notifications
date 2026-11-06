@@ -49,15 +49,15 @@
       "icon": "https://raw.githubusercontent.com/tommy00748-tech/dsh-native-notifications/main/icon.svg",
       "versions": [
         {
-          "version": "1.0.0",
-          "publishTimestamp": 1793873364,
+          "version": "1.1.0",
+          "publishTimestamp": 1793928724,
           "engines": {
-            "dsh": ">=0.1.0"
+            "dsh": ">=0.2.1-rc.5 <0.3.0"
           },
           "source": {
             "type": "git",
             "url": "https://github.com/tommy00748-tech/dsh-native-notifications",
-            "commit": "f7cfe4337babf3f85a3a5d42ddd7608cfea900da"
+            "commit": "c3661ea3795fd80138afc6ff4e6f2cc978b58659"
           }
         }
       ]
