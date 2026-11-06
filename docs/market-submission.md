@@ -104,6 +104,23 @@ Validator rules worth restating (they reject the whole document, not one entry):
 - `repository.url` and `source.registry` are absolute URLs without query or fragment;
 - package names must be unique in the document.
 
+## 6. awesome-dsh-plugin（22.7k★ 大列表，也是格式 1 市场源）
+
+该列表的条目是 `data/plugins/<owner>__<repo>.yml` 单个文件，README 由其自动生成：
+
+```yaml
+url: https://github.com/tommy00748-tech/dsh-native-notifications
+name: tommy00748-tech/dsh-native-notifications
+category: notify
+description:
+  en: 'Native desktop notifications raised by DSH itself for approvals, questions, finished turns, errors and sign-in prompts, attributed to the DeepSeek Harness app with click-to-open; the chime can be picked from presets or authored as a note sequence in Settings.'
+  zh: '由 DSH 自己弹出的原生桌面通知：待授权、等待作答、任务完成、出错与需要登录时提醒，归属 DeepSeek Harness 应用、点击回到会话；提示音可在设置里选预设或自定义音高序列。'
+```
+
+要求：仓库创建满 24 小时（自动检查）、带 `dsh-plugin` topic、`dsh.bundle` manifest、`category` 取
+`notify`；`icon` 只接受 GitHub 托管的 png/jpg/webp（SVG 会被拒，可省略回退到作者头像）。合并后由 CI
+重新生成两份 README 并作为格式 1 索引发布到 `dsh-plugin-catalog`。
+
 ## 5. Direct GitHub install (no market needed)
 
 The bundle is directly installable from this repository:
